@@ -5,6 +5,7 @@ import View2 from './views/view2.vue'
 
 import login from './pages/login.vue'
 import home from './pages/home.vue'
+import home2 from './pages/home2.vue'
 import favorite from './pages/favorite.vue'
 import labels from './pages/labels.vue'
 import profile from './pages/profile.vue'
@@ -38,6 +39,10 @@ export default new Router({
     , {
         path: '/home',
         component: home
+    }
+    , {
+        path: '/home2',
+        component: home2
     }
     , {
         path: '/labels',

@@ -11,12 +11,13 @@
                     <span class="ratyli" data-rate="3"></span>
                 </div>
     </article> -->
-    <router-link to="/home">Go to home</router-link>
+    <!-- <router-link to="/home">Go to home</router-link>
+    <router-link to="/home2">Go to home2</router-link>
     <router-link to="/favorite">Go to favorite</router-link>
     <router-link to="/login">Go to login</router-link>
     <router-link to="/labels">Go to labels</router-link>
     <router-link to="/profile">Go to profile</router-link>
-    <router-link to="/book">Go to book</router-link>
+    <router-link to="/book">Go to book</router-link> -->
     <!-- 路由出口 -->
     <!-- 路由匹配到的组件将渲染在这里 -->
     <router-view></router-view>
