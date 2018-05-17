@@ -1,26 +1,17 @@
 <template>
-	<!-- <el-row class="container">
-		<el-row>
- 	 		<el-col :span="24"><div class="grid-content bg-purple-dark"></div></el-col>
-		</el-row>
-		<el-row>
-			<el-col :span="20">
-				<div class="grid-content bg-purple-dark"></div>
-			</el-col>
-			<el-col :span="4">
-				<div class="grid-content bg-purple-dark"></div>
-			</el-col>
-		</el-row>
-		<el-row :gutter="20">
-  <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
-  <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
-  <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
-  <el-col :span="6"><div class="grid-content bg-purple"></div></el-col>
-</el-row>
-	</el-row> -->
 	<el-container>
-  		<el-header>Header</el-header>
-  		<el-main>Main</el-main>
+  		<el-header>
+
+      </el-header>
+
+  		<el-main>
+        <!-- gutter表示栅格的间距 -->
+        <el-row :gutter="40">
+            <el-col :span="12"><div class="grid-content bg-purple"></div></el-col>
+            <el-col :span="12"><div class="grid-content bg-purple"></div></el-col>
+        </el-row>
+      </el-main>
+
 	</el-container>
 </template>
 
@@ -29,43 +20,31 @@
 </script>
 
 <style>
-	/* .container{
-		position:absolute;
-		top:0px;
-		bottom:0px;
-		width:100%;
-
-	} */
-
- .el-header, .el-footer {
+  .el-header {
+	  position:absolute;
+	  top:0px;
+	  bottom:0px;
     background-color: #B3C0D1;
     color: #333;
     text-align: center;
-    line-height: 60px;
+    line-height: 115px;
+	  width:100%;
   }
 
-    .el-main {
+  .el-main {
     background-color: #E9EEF3;
     color: #333;
     text-align: center;
-    line-height: 160px;
+    height: 960px;
+	  width:1040px;
+	  margin:0px auto;
   }
 
-    body > .el-container {
-    margin-bottom: 40px;
-  }
-  
-  .el-container:nth-child(5) .el-aside,
-  .el-container:nth-child(6) .el-aside {
-    line-height: 260px;
-  }
-  
-  .el-container:nth-child(7) .el-aside {
-    line-height: 320px;
-  }
-
-  /* .el-row {
-    margin-bottom: 20px;
+  .el-row {
+    margin-bottom: 30px;
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
   .el-col {
     border-radius: 4px;
@@ -81,10 +60,10 @@
   }
   .grid-content {
     border-radius: 4px;
-    min-height: 36px;
+    min-height: 145px;
   }
   .row-bg {
     padding: 10px 0;
     background-color: #f9fafc;
-  } */
+  }
 </style>
