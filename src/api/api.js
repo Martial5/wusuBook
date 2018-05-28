@@ -2,7 +2,7 @@ import axios from 'axios';
 
 let base = '';
 
-export const requestLogin = params => { return axios.post(`http://result.eolinker.com/2BtYIRM55300af066847f0224967fe54269bb77fda77aca?uri=/login`, params).then(res => res.data); };
+export const requestLogin = params => { return axios.post(` https://www.easy-mock.com/mock/5b026b6a55348c1c9545d9ec/wusu`, params).then(res => res.data); };
 
 export const getTodoList = params => { //封装一个函数，名为getTodoList
     return axios.get(`/todo/list`, { // 请求路径 ‘/todo/list’

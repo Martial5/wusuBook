@@ -1,4 +1,10 @@
 <template>
+<div>
+  <div class="logo">
+    <img class="logoImage" src="../images/logo.png">
+  </div>
+
+  <div>
   <el-form :model="ruleForm2" :rules="rules2" ref="ruleForm2" label-position="left" label-width="0px" class="demo-ruleForm login-container">
     <h3 class="title">系统登录</h3>
     <el-form-item prop="account">
@@ -13,6 +19,8 @@
       <!--<el-button @click.native.prevent="handleReset2">重置</el-button>-->
     </el-form-item>
   </el-form>
+  </div>
+</div>
 </template>
 
 <script>
@@ -51,20 +59,37 @@
             this.logining = true;
             //NProgress.start();
             var loginParams = { username: this.ruleForm2.account, password: this.ruleForm2.checkPass };
-            requestLogin(loginParams).then(data => {
-              this.logining = false;
-              //NProgress.done();
-              let { msg, code, user } = data;
-              if (code !== 200) {
-                this.$message({
-                  message: msg,
-                  type: 'error'
-                });
-              } else {
-                sessionStorage.setItem('user', JSON.stringify(user));
-                this.$router.push({ path: '/home2' });
-              }
-            });
+            // this.$http.post('http://localhost/vueapi/index.php/Home/user/login',data).then((res)=>{
+            //   console.log(res)
+            if(loginParams.username=='admin'&&loginParams.password=='123456'){
+              this.$router.push({ path: '/home2' });
+            }
+            else{
+                 this.$alert('信息有误', '出错', {
+                 confirmButtonText: '确定',
+                //  callback: action => {
+                //    this.$message({
+                //   type: 'info',
+                //   // message: `action: ${ action }`
+                //   });
+                // }
+               });
+            }
+
+            // requestLogin(loginParams).then(data => {
+            //   this.logining = false;
+            //   //NProgress.done();
+            //   let { msg, code, user } = data;
+            //   if (code !== 200) {
+            //     this.$message({
+            //       message: msg,
+            //       type: 'error'
+            //     });
+            //   } else {
+            //     sessionStorage.setItem('user', JSON.stringify(user));
+            //     this.$router.push({ path: '/home2' });
+            //   }
+            // });
           } else {
             console.log('error submit!!');
             return false;
@@ -77,13 +102,34 @@
 </script>
 
 <style lang="scss" scoped>
+  .logoImage{
+    width:auto;
+    height:auto;
+    max-width:100%;
+    max-height:100%;
+    margin: 0 auto;
+  }
+
+  .logo{
+    // position: absolute;
+    // top: 0px;
+    // width: auto;
+    width: 100%;
+    height: 100px;
+    margin: 10px 0 0 0;
+    float: left;
+    text-align: center;
+    overflow: hidden;
+    float: left;
+  }
+
   .login-container {
     /*box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.06), 0 1px 0px 0 rgba(0, 0, 0, 0.02);*/
     -webkit-border-radius: 5px;
     border-radius: 5px;
     -moz-border-radius: 5px;
     background-clip: padding-box;
-    margin: 180px auto;
+    margin: 110px auto;
     width: 350px;
     padding: 35px 35px 15px 35px;
     background: #fff;

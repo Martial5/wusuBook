@@ -2,25 +2,29 @@
 
     <div id="main">
 
-<!--       <div id="searchBar">
+      <!-- <div id="searchBar">
         <searchBar></searchBar>
-      </div>
- -->
+      </div> -->
+
       <div id="navigation">
         <navigation></navigation>  
       </div>
-          
+
+      <!-- <div v-for="(item,key) in data">
+        <div id="books_left">
+          {{item}}
+        </div>
+
+        <div id="books_right">
+          {{item}}
+        </div> -->
+
       <div id="books_left">
       </div>
 
       <div id="books_right">
       </div>
-
-      <div id="books_left">
-      </div>
-
-      <div id="books_right">
-      </div>
+      <!-- </div> -->
 
     </div>
 </template>
@@ -30,7 +34,17 @@ import navigation from '../components/navigation.vue'
 import searchBar from '../components/searchBar.vue'
     export default {
         name: 'home',
-
+        data () {
+            return{
+                data:[]
+            }
+        },
+        mounted: function () {
+            this.$axios.get('https://www.easy-mock.com/mock/5b026b6a55348c1c9545d9ec/wusu/getBookList').then(res =>{
+                this.data = res.data;
+                // console.log(res)
+            })
+        },
         components:{navigation,searchBar
         }
     }
@@ -57,7 +71,7 @@ import searchBar from '../components/searchBar.vue'
 
 #navigation{
   width: 1000px;
-  height: 40px;
+  height: 60px;
   float: left;
   border:1px #F00 solid;
   background-color: #eee;
