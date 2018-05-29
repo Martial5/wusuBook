@@ -62,7 +62,7 @@
             // this.$http.post('http://localhost/vueapi/index.php/Home/user/login',data).then((res)=>{
             //   console.log(res)
             if(loginParams.username=='admin'&&loginParams.password=='123456'){
-              this.$router.push({ path: '/home2' });
+              this.$router.push({ path: '/home' });
             }
             else{
                  this.$alert('信息有误', '出错', {

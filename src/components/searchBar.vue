@@ -32,7 +32,7 @@
 
 <style>
 *{margin:0;padding:0;list-style:none;}
-.jq22-search-form{width:575px;margin:2px auto;float: left;overflow: hidden;}
+.jq22-search-form{width:400px;margin:2px auto;float: left;overflow: hidden;}
 .jq22-search-form .search-bd{height: 2px;}
 .jq22-search-form .search-bd li{font-size:12px;width:60px;height: 25px;line-height: 25px;text-align:center;float: left;cursor: pointer;background-color: #eee;color: #666;}
 .jq22-search-form .search-bd li.selected{color: #fff;font-weight: 700;background-color: #B61D1D;}

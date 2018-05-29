@@ -26,20 +26,21 @@
 </template>
 
 <script>
-import firstcomponent from './components/firstcomponent.vue'
+import firstcomponent from './components/firstcomponent2.vue'
+// import header from './components/header.vue'
 // import score from './components/score.vue'
 
 export default {
 　　name: 'app',
     mounted(){
-      $("body").css("background","black");   //jquery语法
+      // $("body").css("background","white");   //jquery语法
     },
 　　data () {
 　　　　return {
-　　　　　　msg: 'Welcome to Your Vue.js App'
+// 　　　　　　msg: 'Welcome to Your Vue.js App'
 　　　　}
 　　},
-　　components: { firstcomponent  }
+　　components: { firstcomponent }
 }
 
 </script>
