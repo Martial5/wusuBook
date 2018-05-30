@@ -1,42 +1,11 @@
 <template>
 	<div>
-        <div class="favorite_title">
-            <h1>我的收藏</h1>
-        </div>
-        
         <div>
         <div class="article">
-          <ul>
+          <ul v-for="n in 4">
             <li>
                 <a class="bookCover" href="https://book.douban.com/subject/27621504/">
-                <img src="https://img1.doubanio.com/view/subject/m/public/s29725069.jpg">
-                </a>
-                <div class="bookIntro">
-                    <h2>
-                        <a calss="link" href="https://book.douban.com/subject/27621504/">在美国钓鳟鱼</a>
-                    </h2>
-                    <p class="bookRating">
-                        <!-- 评分 -->
-                        <el-rate
-                          v-model="value5"
-                          disabled  
-                          show-score
-                          text-color="#ff9900"
-                          score-template="{value}">
-                        </el-rate>
-                    </p>
-                    <p class="color-gray">
-                        [美] 理查德·布劳提根 / 广西师范大学出版社 / 2018-5
-                    </p>
-                    <p class="bookDetail">
-                        后垮掉派诗人理查德·布劳提根的小说代表作，一趟在时空之中、在虚构与现实之间穿梭跳跃的钓鳟鱼之旅，曾在美国畅销逾200万册。        
-                    </p>
-                </div>
-            </li>
-
-            <li>
-                <a class="bookCover" href="https://book.douban.com/subject/27621504/">
-                <img src="https://img1.doubanio.com/view/subject/m/public/s29725069.jpg">
+                <img src="https://img3.doubanio.com/view/subject/m/public/s29762485.jpg">
                 </a>
                 <div class="bookIntro">
                     <h2>
@@ -64,37 +33,10 @@
         </div>
 
         <div class="aside">
-          <ul>
+          <ul v-for="n in 4">
             <li>
                 <a class="bookCover" href="https://book.douban.com/subject/27621504/">
-                <img src="https://img1.doubanio.com/view/subject/m/public/s29725069.jpg">
-                </a>
-                <div class="bookIntro">
-                    <h2>
-                        <a calss="link" href="https://book.douban.com/subject/27621504/">在美国钓鳟鱼</a>
-                    </h2>
-                    <p class="bookRating">
-                        <!-- 评分 -->
-                        <el-rate
-                          v-model="value5"
-                          disabled  
-                          show-score
-                          text-color="#ff9900"
-                          score-template="{value}">
-                        </el-rate>
-                    </p>
-                    <p class="color-gray">
-                        [美] 理查德·布劳提根 / 广西师范大学出版社 / 2018-5
-                    </p>
-                    <p class="bookDetail">
-                        后垮掉派诗人理查德·布劳提根的小说代表作，一趟在时空之中、在虚构与现实之间穿梭跳跃的钓鳟鱼之旅，曾在美国畅销逾200万册。        
-                    </p>
-                </div>
-            </li>
-
-            <li>
-                <a class="bookCover" href="https://book.douban.com/subject/27621504/">
-                <img src="https://img1.doubanio.com/view/subject/m/public/s29725069.jpg">
+                <img src="https://img3.doubanio.com/view/subject/m/public/s29762485.jpg">
                 </a>
                 <div class="bookIntro">
                     <h2>
@@ -159,11 +101,6 @@
 </script>
 
 <style>
-  .favorite_title{
-      width: 900px;
-      height: 50px;
-      float: left;
-  }
 
   li{
     height: 145px;
@@ -203,7 +140,7 @@
     text-decoration: none;
   }
 
-  a.bookCover{
+  .bookCover{
     float: left;
     display: block;
     width: 100px;

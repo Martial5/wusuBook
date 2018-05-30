@@ -1,10 +1,11 @@
 <template>	
 	<el-container>
-        <el-header>
+        <!-- <el-header>
         <headerBar></headerBar>
       </el-header>
       <el-main>
-      </el-main>
+      </el-main> -->
+      333
 	</el-container>
 </template>
 

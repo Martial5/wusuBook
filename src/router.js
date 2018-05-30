@@ -1,11 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import View1 from './views/view1.vue'
-import View2 from './views/view2.vue'
-
 import login from './pages/login.vue'
 import home from './pages/home.vue'
 import home2 from './pages/home2.vue'
+import bookList from './pages/bookList.vue'
 import favorite from './pages/favorite.vue'
 import labels from './pages/labels.vue'
 import profile from './pages/profile.vue'
@@ -19,46 +17,50 @@ export default new Router({
     // 路由配置
     routes: [
     {
-        path: '/view1',
-        component: View1
-    }, {
-        path: '/view2',
-        component: View2
-    }
-    , {
         path: '/login',
         component: login
+    },
+    {
+        path: '/',
+        component: home,
+        children:[
+            { path: 'bookList', component: bookList },
+            { path: 'favorite', component: favorite },
+            { path: 'labels', component: labels },
+            { path: 'profile', component: profile },
+            { path: 'book', component: book }
+        ]
     }
-    , {
-        path: '/book',
-        component: book
-    }
-    , {
-        path: '/book2',
-        component: book2
-    }
-    , {
-        path: '/favorite',
-        component: favorite
-    }
-    , {
-        path: '/home',
-        component: home
-    }
-    , {
-        path: '/home2',
-        component: home2
-    }
-    , {
-        path: '/labels',
-        component: labels
-    }
-    , {
-        path: '/profile',
-        component: profile
-    }, {
-        path: '/*',
-        component: home
-    }
+    // , {
+    //     path: '/book',
+    //     component: book
+    // }
+    // , {
+    //     path: '/book2',
+    //     component: book2
+    // }
+    // , {
+    //     path: '/favorite',
+    //     component: favorite
+    // }
+    // , {
+    //     path: '/home',
+    //     component: home
+    // }
+    // , {
+    //     path: '/home2',
+    //     component: home2
+    // }
+    // , {
+    //     path: '/labels',
+    //     component: labels
+    // }
+    // , {
+    //     path: '/profile',
+    //     component: profile
+    // }, {
+    //     path: '/*',
+    //     component: home
+    // }
     ]
 })

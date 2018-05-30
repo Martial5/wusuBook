@@ -58,7 +58,7 @@
               console.log(key, keyPath);
             },
             goBookList() {
-              this.$router.push({ path: '/home' });
+              this.$router.push({ path: '/bookList' });
             }
             ,
             goMyCollection() {
