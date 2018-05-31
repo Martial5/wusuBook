@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<div class="favoriteContainer">
         <div class="favorite_title">
             <h1>我的收藏</h1>
         </div>
@@ -159,6 +159,11 @@
 </script>
 
 <style>
+    .favoriteContainer{
+      height: 890px;
+	  width:1030px;
+      margin: 0 auto;
+    }
   .favorite_title{
       width: 900px;
       height: 50px;

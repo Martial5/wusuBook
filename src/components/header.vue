@@ -88,7 +88,7 @@
 <style>
 .searchBar{
   position: relative;
-  left:155px;
+  left:140px;
   top:10px;
   width: 480px;
   height: 60px;
@@ -100,7 +100,7 @@
     width: 400px;
     height: 60px;
     float: left;
-    margin: 0 0 0 135px;
+    margin: 0 0 0 140px;
   }
 
   .nav2{
@@ -108,6 +108,6 @@
     height: 60px;
     float: left;
     /* margin: 0 0 0 572px; */
-    margin: 0 0 0 92px;
+    margin: 0 0 0 117px;
   }
 </style>

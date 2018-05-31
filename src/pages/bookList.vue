@@ -1,9 +1,11 @@
 <template>
-	<div>
-        <div>
+      <div class="bookContainer">
+        <div class="bookList_title">
+            <h1>为您推荐</h1>
+        </div>
         <div class="article">
-          <ul v-for="n in 4">
-            <li>
+          <ul>
+            <li v-for="n in 4">
                 <a class="bookCover" href="https://book.douban.com/subject/27621504/">
                 <img src="https://img3.doubanio.com/view/subject/m/public/s29762485.jpg">
                 </a>
@@ -33,8 +35,8 @@
         </div>
 
         <div class="aside">
-          <ul v-for="n in 4">
-            <li>
+          <ul>
+            <li v-for="n in 4">
                 <a class="bookCover" href="https://book.douban.com/subject/27621504/">
                 <img src="https://img3.doubanio.com/view/subject/m/public/s29762485.jpg">
                 </a>
@@ -62,7 +64,6 @@
             </li>
           </ul>
         </div>
-        </div>
         <div class="page">
           <el-pagination
             background
@@ -70,7 +71,7 @@
             :total="1000">
           </el-pagination>
         </div>
-	</div>
+      </div>
 </template>
 
 <script>
@@ -101,6 +102,17 @@
 </script>
 
 <style>
+  .bookList_title{
+    width: 900px;
+    height: 50px;
+    float: left;
+  }
+  
+  .bookContainer{
+    height: 890px;
+	  width:1030px;
+    margin: 0 auto;
+  }
 
   li{
     height: 145px;

@@ -69,8 +69,8 @@
     background-color: #E9EEF3;
     color: #333;
     text-align: left;
-    height: 900px;
-	  width:1040px;
+    height: 960px;
+	  width:1100px;
 	  margin:0px auto;
   }
 

@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import firstcomponent from './components/firstcomponent2.vue'
+// import firstcomponent from './components/firstcomponent2.vue'
 // import header from './components/header.vue'
 // import score from './components/score.vue'
 
@@ -40,7 +40,7 @@ export default {
 // 　　　　　　msg: 'Welcome to Your Vue.js App'
 　　　　}
 　　},
-　　components: { firstcomponent }
+　　components: {  }
 }
 
 </script>

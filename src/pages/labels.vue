@@ -1,12 +1,23 @@
 <template>	
-  <div>
+  <div class="labelContainer">
+    <div class="newBook">
+      <h1>新书速递</h1>
+      </div>
+      <div class="hotPics">
+      <el-carousel :interval="4000" type="card" height="200px">
+      <el-carousel-item v-for="item in 6" :key="item">
+        <h3>{{ item }}</h3>
+      </el-carousel-item>
+      </el-carousel>
+	  </div>
     <div class="popularBook">
       <h1>最受欢迎图书</h1>
     </div>
     <div class="tag_title">
       <h1>标签页</h1>
     </div>
-    <div class="hotBooks">
+    <div class="labelMain">
+      <div class="hotBooks">
           <ul>
             <li v-for="n in 10" class="smallCover">
                 <div class="cover">
@@ -24,10 +35,10 @@
                 </div>
             </li>
           </ul>
-    </div>
-    <div class="bookTag">
+      </div>
+      <div class="bookTag">
       <ul>
-        <li class="li_tag" v-for="n in 5">
+        <li class="li_tag" v-for="n in 4">
           <el-tag>标签一</el-tag>
           <el-tag type="success">标签二</el-tag>
           <el-tag type="info">标签三</el-tag>
@@ -38,8 +49,9 @@
           <el-tag type="info">标签三</el-tag>
         </li>
       </ul>
+      </div>
     </div>
-  </div>
+  </div> 
 </template>
 
 <script type="text/javascript">
@@ -60,6 +72,31 @@
 </script>
  
 <style>
+  .labelContainer{
+    height: 890px;
+	  width:1030px;
+    margin: 0 auto;
+  }
+
+  .hotPics{
+    width: 1000px;
+    height: 200px;
+    float: left;
+  }
+
+  .newBook{
+    width: 1000px;
+    height: 50px;
+    float: left;
+    margin: 0 0 20px 0;
+  }
+
+  .labelMain{
+    height: 550px;
+	  width:1030px;
+    margin: 0 auto;
+  }
+  
   .popularBook{
     width: 660px;
     height: 50px;
@@ -134,5 +171,21 @@
 
   .li_tag{
     height: 80px;
+  }
+
+  .el-carousel__item h3 {
+    color: #475669;
+    font-size: 14px;
+    opacity: 0.75;
+    line-height: 200px;
+    margin: 0;
+  }
+  
+  .el-carousel__item:nth-child(2n) {
+    background-color: #99a9bf;
+  }
+  
+  .el-carousel__item:nth-child(2n+1) {
+    background-color: #d3dce6;
   }
 </style>

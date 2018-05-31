@@ -1,24 +1,27 @@
 <template>
 <div>
-  <div class="logo">
-    <img class="logoImage" src="../images/logo.png">
+  <div class="logo2">
+    <img class="logoImage2" src="../images/logo.png">
   </div>
 
   <div>
-  <el-form :model="ruleForm2" :rules="rules2" ref="ruleForm2" label-position="left" label-width="0px" class="demo-ruleForm login-container">
-    <h3 class="login_title">系统登录</h3>
+  <el-form :model="ruleForm2" :rules="rules2" ref="ruleForm2" label-position="left" label-width="0px" class="demo-ruleForm login-container2">
+    <h3 class="login_title">用户注册</h3>
     <el-form-item prop="account">
       <el-input type="text" v-model="ruleForm2.account" auto-complete="off" placeholder="账号"></el-input>
     </el-form-item>
     <el-form-item prop="checkPass">
       <el-input type="password" v-model="ruleForm2.checkPass" auto-complete="off" placeholder="密码"></el-input>
     </el-form-item>
+    <el-form-item prop="checkPass2">
+      <el-input type="password" v-model="ruleForm2.checkPass" auto-complete="off" placeholder="确认密码"></el-input>
+    </el-form-item>
     <!-- <el-checkbox v-model="checked" checked class="remember">记住密码</el-checkbox> -->
     <div class="register">
-      <el-button type="text" @click="to_register">没有账号?点这里注册</el-button>
+      <el-button type="text" @click="to_register">点这里登录</el-button>
     </div>
     <el-form-item style="width:100%;">
-      <el-button type="primary" style="width:100%;" @click.native.prevent="handleSubmit2" :loading="logining">登录</el-button>
+      <el-button type="primary" style="width:100%;" @click.native.prevent="handleSubmit2" :loading="logining">注册</el-button>
     </el-form-item>
   </el-form>
   </div>
@@ -33,8 +36,8 @@
       return {
         logining: false,
         ruleForm2: {
-          account: 'admin',
-          checkPass: '123456'
+        //   account: 'admin',
+        //   checkPass: '123456'
         },
         rules2: {
           account: [
@@ -96,7 +99,7 @@
         });
       },
       to_register() {
-        this.$router.push({ path: '/register' });
+        this.$router.push({ path: '/login' });
       }
     }
   }
@@ -104,7 +107,7 @@
 </script>
 
 <style lang="scss" scoped>
-  .logoImage{
+  .logoImage2{
     width:auto;
     height:auto;
     max-width:100%;
@@ -112,7 +115,7 @@
     margin: 0 auto;
   }
 
-  .logo{
+  .logo2{
     // position: absolute;
     // top: 0px;
     // width: auto;
@@ -125,7 +128,7 @@
     float: left;
   }
 
-  .login-container {
+  .login-container2 {
     /*box-shadow: 0 0px 8px 0 rgba(0, 0, 0, 0.06), 0 1px 0px 0 rgba(0, 0, 0, 0.02);*/
     -webkit-border-radius: 5px;
     border-radius: 5px;

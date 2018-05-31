@@ -1,5 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+
+import register from './pages/register.vue'
 import login from './pages/login.vue'
 import home from './pages/home.vue'
 import home2 from './pages/home2.vue'
@@ -16,6 +18,14 @@ export default new Router({
     linkActiveClass: 'active',
     // 路由配置
     routes: [
+    // {
+    //     path: '/*',
+    //      component: login
+    // },
+    {
+        path: '/register',
+        component: register
+    },
     {
         path: '/login',
         component: login
@@ -35,10 +45,10 @@ export default new Router({
     //     path: '/book',
     //     component: book
     // }
-    // , {
-    //     path: '/book2',
-    //     component: book2
-    // }
+    , {
+        path: '/book2',
+        component: book2
+    }
     // , {
     //     path: '/favorite',
     //     component: favorite
