@@ -14,7 +14,7 @@
       <el-input type="password" v-model="ruleForm2.checkPass" auto-complete="off" placeholder="密码"></el-input>
     </el-form-item>
     <el-form-item prop="checkPass2">
-      <el-input type="password" v-model="ruleForm2.checkPass" auto-complete="off" placeholder="确认密码"></el-input>
+      <el-input type="password" v-model="ruleForm2.checkPass2" auto-complete="off" placeholder="确认密码"></el-input>
     </el-form-item>
     <!-- <el-checkbox v-model="checked" checked class="remember">记住密码</el-checkbox> -->
     <div class="register">
@@ -47,6 +47,9 @@
           checkPass: [
             { required: true, message: '请输入密码', trigger: 'blur' },
             //{ validator: validaePass2 }
+          ],
+          checkPass2:[
+            { required: true, message: '请再次输入密码', trigger: 'blur' },
           ]
         },
         checked: true

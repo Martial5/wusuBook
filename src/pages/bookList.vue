@@ -6,12 +6,12 @@
         <div class="article">
           <ul>
             <li v-for="n in 4">
-                <a class="bookCover" href="https://book.douban.com/subject/27621504/">
+                <a class="bookCover">
                 <img src="https://img3.doubanio.com/view/subject/m/public/s29762485.jpg">
                 </a>
                 <div class="bookIntro">
                     <h2>
-                        <a calss="link" href="https://book.douban.com/subject/27621504/">在美国钓鳟鱼</a>
+                        <a>在美国钓鳟鱼</a>
                     </h2>
                     <p class="bookRating">
                         <!-- 评分 -->
@@ -36,18 +36,18 @@
 
         <div class="aside">
           <ul>
-            <li v-for="n in 4">
+            <li v-for="(bookList,index) in bookLists">
                 <a class="bookCover" href="https://book.douban.com/subject/27621504/">
                 <img src="https://img3.doubanio.com/view/subject/m/public/s29762485.jpg">
                 </a>
                 <div class="bookIntro">
                     <h2>
-                        <a calss="link" href="https://book.douban.com/subject/27621504/">在美国钓鳟鱼</a>
+                        <a calss="link" href="https://book.douban.com/subject/27621504/">{{bookList.bookName}}</a>
                     </h2>
                     <p class="bookRating">
                         <!-- 评分 -->
                         <el-rate
-                          v-model="value5"
+                          v-model="bookList.bookRating"
                           disabled  
                           show-score
                           text-color="#ff9900"
@@ -55,10 +55,10 @@
                         </el-rate>
                     </p>
                     <p class="color-gray">
-                        [美] 理查德·布劳提根 / 广西师范大学出版社 / 2018-5
+                        {{bookList.bookAuthor}} / {{bookList.bookPub}} / {{bookList.bookDate}}
                     </p>
                     <p class="bookDetail">
-                        后垮掉派诗人理查德·布劳提根的小说代表作，一趟在时空之中、在虚构与现实之间穿梭跳跃的钓鳟鱼之旅，曾在美国畅销逾200万册。        
+                        {{bookList.bookDetail}}        
                     </p>
                 </div>
             </li>
@@ -80,12 +80,13 @@
             return{
                 data:[],
                 value5: 3.7,
+                bookLists:[]
             }
         },
         mounted: function () {
-            this.$axios.get('https://www.easy-mock.com/mock/5b026b6a55348c1c9545d9ec/wusu/getBookList').then(res =>{
-                this.data = res.data;
-                console.log(res)
+            this.$axios.get('https://www.easy-mock.com/mock/5b026b6a55348c1c9545d9ec/wusu/getMyBookList').then(res =>{
+                this.bookLists = res.data.booklist;
+                // console.log(res_book)
             })
         }
         // ,

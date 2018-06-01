@@ -24,13 +24,13 @@
                 // activeIndex: '1',
                 // activeIndex2: '1'
             }
-        },
-        mounted: function () {
-            this.$axios.get('https://www.easy-mock.com/mock/5b026b6a55348c1c9545d9ec/wusu/getBookList').then(res =>{
-                this.data = res.data;
-                console.log(res)
-            })
         }
+        // mounted: function () {
+        //     this.$axios.get('https://www.easy-mock.com/mock/5b026b6a55348c1c9545d9ec/wusu/getBookList').then(res =>{
+        //         this.data = res.data;
+        //         console.log(res)
+        //     })
+        // }
         // ,
         //   methods:  {
         //       handleSelect(key, keyPath) {

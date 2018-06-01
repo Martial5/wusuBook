@@ -45,10 +45,10 @@ export default new Router({
     //     path: '/book',
     //     component: book
     // }
-    , {
-        path: '/book2',
-        component: book2
-    }
+    // , {
+    //     path: '/book2',
+    //     component: book2
+    // }
     // , {
     //     path: '/favorite',
     //     component: favorite
@@ -57,10 +57,10 @@ export default new Router({
     //     path: '/home',
     //     component: home
     // }
-    // , {
-    //     path: '/home2',
-    //     component: home2
-    // }
+    , {
+        path: '/home2',
+        component: home2
+    }
     // , {
     //     path: '/labels',
     //     component: labels

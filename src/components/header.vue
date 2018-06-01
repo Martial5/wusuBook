@@ -22,7 +22,7 @@
                 <el-input  v-model="input" placeholder="请输入内容"></el-input>
               </el-form-item>
               <el-form-item>
-                <el-button type="primary" icon="el-icon-search">搜索</el-button>
+                <el-button type="primary" icon="el-icon-search" @click="serachBook">搜索</el-button>
               </el-form-item>
             </el-form>
           </div>
@@ -49,7 +49,9 @@
         data () {
             return{
                 activeIndex: '1',
-                activeIndex2: '1'
+                activeIndex2: '1',
+                input:'',
+                serachBooks:[]
             }
         }
         ,
@@ -75,6 +77,23 @@
             ,
             goLogin() {
               this.$router.push({ path: '/login' });
+            },
+            serachBook(){
+              var searchInput = this.input;
+              if(searchInput=='1'){
+              this.$axios.get('https://www.easy-mock.com/mock/5b026b6a55348c1c9545d9ec/wusu/search').then(res =>{
+                this.serachBooks = res.data.data.serachBook;
+                // console.log(res_book)
+              })
+              var getSearch = this.serachBook.bookName;
+              }
+              if(searchInput==getSearch){
+                this.$router.push({ path: '/bookList' });
+              }
+              else{
+                this.$router.push({ path: '/labels' });
+              }
+
             }
           
           }

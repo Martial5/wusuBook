@@ -42,7 +42,7 @@
         </div>
         <div class="history_bookList">
           <ul>
-            <li v-for="n in 8" class="pro_smallCover">
+            <li v-for="(historyList,index) in historyLists" class="pro_smallCover">
                 <div class="pro_cover">
                   <a href="https://book.douban.com/subject/27616947/?icn=index-latestbook-subject" title="刀锋之先">
                   <img src="https://img3.doubanio.com/view/subject/m/public/s29744555.jpg" class="pro_midSize"  alt="刀锋之先">
@@ -50,10 +50,10 @@
                 </div>
                 <div class="pro_info">
                   <div class="pro_title">
-                    <a class="pro_titleFont" href="https://book.douban.com/subject/27616947/?icn=index-latestbook-subject" title="刀锋之先">刀锋之先</a>
+                    <a class="pro_titleFont" href="https://book.douban.com/subject/27616947/?icn=index-latestbook-subject" title="刀锋之先">{{historyList.bookName}}</a>
                   </div>
                   <div class="pro_author">
-                    [美] 劳伦斯·布洛克
+                    {{historyList.bookAuthor}}
                   </div>
                 </div>
             </li>
@@ -69,10 +69,10 @@
 
       <div class="bookTag">
       <ul>
-        <li class="li_tag" v-for="n in 3">
-          <el-tag>标签一</el-tag>
-          <el-tag type="success">标签二</el-tag>
-          <el-tag type="info">标签三</el-tag>
+        <li class="li_tag" v-for="mytagList in mytagLists">
+          <el-tag>{{mytagList.tag1}}</el-tag>
+          <el-tag type="success">{{mytagList.tag2}}</el-tag>
+          <el-tag type="info">{{mytagList.tag3}}</el-tag>
         </li>
       </ul>
       </div>
@@ -85,9 +85,11 @@
     export default {
         name: 'profile',
         data () {
-            return {
-          tabPosition: 'right'
-         };
+          return {
+            tabPosition: 'right',
+            historyLists:[],
+            mytagLists:[]
+          };
         },
         methods:  {
           // fixPass() {
@@ -97,6 +99,16 @@
       
           // }
 
+        },
+        mounted: function () {
+            this.$axios.get('https://www.easy-mock.com/mock/5b026b6a55348c1c9545d9ec/wusu/getMyBookList').then(res =>{
+                this.historyLists = res.data.booklist;
+                // console.log(res)
+            }),
+            this.$axios.get('https://www.easy-mock.com/mock/5b026b6a55348c1c9545d9ec/wusu/tagList').then(res =>{
+                this.mytagLists = res.data.data.tagList;
+                // console.log(res_book)
+            })
         },
         components:{
 

@@ -3,13 +3,22 @@
     <div class="newBook">
       <h1>新书速递</h1>
       </div>
+      <!-- 新书卡片轮播 -->
       <div class="hotPics">
       <el-carousel :interval="4000" type="card" height="200px">
-      <el-carousel-item v-for="item in 6" :key="item">
-        <h3>{{ item }}</h3>
+      <el-carousel-item v-for="item in 4" :key="item">
+        <div class="newBook_cover"><img src="https://img3.doubanio.com/view/subject/m/public/s29781195.jpg" class="midSize"></div>
+        <div class="newBook_info">
+          <p>数亿人次抢看，豆瓣9.9分高评！</p>
+          <p>历时5年制作，125次探险，</p>
+          <p>全球39个国家，6000小时水下拍摄！</p>
+          <p>尖端科技装备，全程4K高清，抵达深海禁区！</p>
+          <p>众多首次发现，升级思维，刷新认知！</p>
+          <p>自然纪录片之父大卫•爱登堡作序推荐！</p>
+        </div>
       </el-carousel-item>
       </el-carousel>
-	  </div>
+	    </div>
     <div class="popularBook">
       <h1>最受欢迎图书</h1>
     </div>
@@ -19,7 +28,7 @@
     <div class="labelMain">
       <div class="hotBooks">
           <ul>
-            <li v-for="n in 10" class="smallCover">
+            <li v-for="(hotBookList,index) in hotBookLists" class="smallCover">
                 <div class="cover">
                   <a href="https://book.douban.com/subject/27616947/?icn=index-latestbook-subject" title="刀锋之先">
                   <img src="https://img3.doubanio.com/view/subject/m/public/s29744555.jpg" class="midSize"  alt="刀锋之先">
@@ -27,10 +36,10 @@
                 </div>
                 <div class="info">
                   <div class="title">
-                    <a class="titleFont" href="https://book.douban.com/subject/27616947/?icn=index-latestbook-subject" title="刀锋之先">刀锋之先</a>
+                    <a class="titleFont" href="https://book.douban.com/subject/27616947/?icn=index-latestbook-subject" title="刀锋之先">{{hotBookList.bookName}}</a>
                   </div>
                   <div class="author">
-                    [美] 劳伦斯·布洛克
+                    {{hotBookList.bookAuthor}}
                   </div>
                 </div>
             </li>
@@ -38,15 +47,12 @@
       </div>
       <div class="bookTag">
       <ul>
-        <li class="li_tag" v-for="n in 4">
-          <el-tag>标签一</el-tag>
-          <el-tag type="success">标签二</el-tag>
-          <el-tag type="info">标签三</el-tag>
-          <el-tag type="warning">标签四</el-tag>
-          <el-tag type="danger">标签五</el-tag>
-          <el-tag>标签一</el-tag>
-          <el-tag type="success">标签二</el-tag>
-          <el-tag type="info">标签三</el-tag>
+        <li class="li_tag" v-for="tagList in tagLists">
+          <el-tag>{{tagList.tag1}}</el-tag>
+          <el-tag>{{tagList.tag2}}</el-tag>
+          <el-tag>{{tagList.tag3}}</el-tag>
+          <el-tag>{{tagList.tag4}}</el-tag>
+   
         </li>
       </ul>
       </div>
@@ -60,10 +66,22 @@
         name: 'favorite',
         data () {
             return{
+              hotBookLists:[],
+              tagLists:[]
             }
         },
         methods:  {
              
+        },
+        mounted: function () {
+            this.$axios.get('https://www.easy-mock.com/mock/5b026b6a55348c1c9545d9ec/wusu/getMyBookList').then(res =>{
+                this.hotBookLists = res.data.booklist;
+                // console.log(res_book)
+            })
+            this.$axios.get('https://www.easy-mock.com/mock/5b026b6a55348c1c9545d9ec/wusu/tagList').then(res =>{
+                this.tagLists = res.data.data.tagList;
+                // console.log(res_book)
+            })
         },
         components:{
           headerBar
@@ -76,6 +94,24 @@
     height: 890px;
 	  width:1030px;
     margin: 0 auto;
+  }
+
+  newBook_info.p{
+    text-indent:2em;
+  }
+
+  .newBook_cover{
+    width: 115px;
+    height: 140px;
+    margin: 15px 0 0 10px ;
+    float: left;
+  }
+
+  .newBook_info{
+    width: 360px;
+    height: 185px;
+    float: left;
+    margin: 0 0 0 10px;
   }
 
   .hotPics{
@@ -171,6 +207,7 @@
 
   .li_tag{
     height: 80px;
+    margin:  0 0 -10px 0;
   }
 
   .el-carousel__item h3 {
