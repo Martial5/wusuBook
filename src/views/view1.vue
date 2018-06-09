@@ -1,7 +1,7 @@
 <template>
     <div >
         <h1>我是View1</h1>
-        <a> 我是View1 </a>
+        <a> 我是View1改动 </a>
     </div>
 </template>
 
