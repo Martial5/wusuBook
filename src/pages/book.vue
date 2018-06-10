@@ -15,18 +15,21 @@
               </div>
 
               <div id="info">
-                <a>资料</a>
+                <!-- <a>资料</a> -->
                 <span>
                   <span class="pl"> 作者</span>:
                   <a class="">白云先生</a>
                 </span><br>
+                <br>
                 <span class="pl">出版社:</span> 江苏凤凰文艺出版社<br>
-                <span class="pl">副标题:</span> 治国安民的至道真言<br>
-                <span class="pl">原作名:</span> 老子之道-治国安民的至道真言<br>
+                <br>
+                <!-- <span class="pl">副标题:</span> 治国安民的至道真言<br> -->
+                <!-- <span class="pl">原作名:</span> 老子之道-治国安民的至道真言<br> -->
                 <span class="pl">出版年:</span> 2018-1<br>
-                <span class="pl">页数:</span> 352<br>
+                <!-- <span class="pl">页数:</span> 352<br>
                 <span class="pl">定价:</span> 58.00<br>
-                <span class="pl">装帧:</span> 平装<br>
+                <span class="pl">装帧:</span> 平装<br> -->
+                <br>
                 <span class="pl">ISBN:</span> 9787559411433<br>
               </div>
 
@@ -40,7 +43,7 @@
                           disabled  
                           show-score
                           text-color="#ff9900"
-                          score-template="{value}">
+                          score-template="7.3">
                         </el-rate>
 
               <div class="save_book">
@@ -52,11 +55,10 @@
               <div class="tag_ul">
                 <ul>
                 <li class="li_tag" v-for="n in 1">
-                <el-tag>标签一</el-tag>
-                <el-tag type="success">标签二</el-tag>
-                <el-tag type="info">标签三</el-tag>
-                <el-tag type="warning">标签四</el-tag>
-                <el-tag type="danger">标签五</el-tag>
+                <el-tag>治国、齐家、修身、为学之宝典</el-tag>
+                <el-tag type="success">修身</el-tag>
+                <el-tag type="info">我想读这本书</el-tag>
+                <el-tag type="warning">文化</el-tag>
                 </li>
                 </ul>
               </div>
@@ -191,7 +193,7 @@ import tagCloud from '../components/tagCloud.vue'
         name: 'book',
         data() {
           return{
-            value5: 3.7,
+            value5: 7.3/2,
           }
         },
         components: { score,tagCloud

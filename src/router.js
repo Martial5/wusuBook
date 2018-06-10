@@ -11,6 +11,7 @@ import labels from './pages/labels.vue'
 import profile from './pages/profile.vue'
 import book from './pages/book.vue'
 import book2 from './pages/book2.vue'
+import view1 from './views/view1.vue'
 
 Vue.use(Router)
 
@@ -45,10 +46,10 @@ export default new Router({
     //     path: '/book',
     //     component: book
     // }
-    // , {
-    //     path: '/book2',
-    //     component: book2
-    // }
+    , {
+        path: '/view1',
+        component: view1
+    }
     // , {
     //     path: '/favorite',
     //     component: favorite

@@ -7,7 +7,7 @@
         <div>
         <div class="article">
           <ul>
-            <li v-for="(favoriteList,index) in favoriteLists">
+            <!-- <li v-for="(favoriteList,index) in favoriteLists">
                 <a class="bookCover" href="https://book.douban.com/subject/27621504/">
                 <img src="https://img1.doubanio.com/view/subject/m/public/s29725069.jpg">
                 </a>
@@ -16,7 +16,6 @@
                         <a calss="link" href="https://book.douban.com/subject/27621504/">{{favoriteList.bookName}}</a>
                     </h2>
                     <p class="bookRating">
-                        <!-- 评分 -->
                         <el-rate
                           v-model="favoriteList.bookRating"
                           disabled  
@@ -32,6 +31,81 @@
                         {{favoriteList.bookDetail}}        
                     </p>
                 </div>
+            </li> -->
+            <li>
+                <a class="bookCover" href="https://book.douban.com/subject/27621504/">
+                <img src="https://img3.doubanio.com/view/subject/m/public/s1015872.jpg">
+                </a>
+                <div class="bookIntro">
+                    <h2>
+                        <a calss="link" href="https://book.douban.com/subject/27621504/">我们仨</a>
+                    </h2>
+                    <p class="bookRating">
+                        <!-- 评分 -->
+                        <el-rate
+                          v-model="value5"
+                          disabled  
+                          show-score
+                          text-color="#ff9900"
+                          score-template="8.7">
+                        </el-rate>
+                    </p>
+                    <p class="color-gray">
+                        杨绛 / 生活·读书·新知三联书店 / 2003-7 
+                    </p>
+                    <p class="bookDetail">
+                        《我们仨》是钱钟书夫人杨绛撰写的家庭生活回忆录。1998年，钱钟书逝世，而他和杨绛唯一的女儿钱瑗已于此前（1997年）先他们而去。在人生的伴侣离去四年后，杨...  </p>
+                </div>
+            </li>
+            <li>
+                <a class="bookCover" href="https://book.douban.com/subject/27621504/">
+                <img src="https://img1.doubanio.com/view/subject/m/public/s3984108.jpg">
+                </a>
+                <div class="bookIntro">
+                    <h2>
+                        <a calss="link" href="https://book.douban.com/subject/27621504/">目送</a>
+                    </h2>
+                    <p class="bookRating">
+                        <!-- 评分 -->
+                        <el-rate
+                          v-model="value5"
+                          disabled  
+                          show-score
+                          text-color="#ff9900"
+                          score-template="8.7">
+                        </el-rate>
+                    </p>
+                    <p class="color-gray">
+                        龙应台 / 生活·读书·新知三联书店 / 2009-10 
+                    </p>
+                    <p class="bookDetail">
+                        目送共由七十四篇散文组成，是为一本极具亲情、感人至深的文集。由父亲的逝世、母亲的苍老、儿子的离开、朋友的牵挂、兄弟的携手共行，写出失败和脆弱、失落和放手，写... </p>
+                </div>
+            </li>
+            <li>
+                <a class="bookCover" href="https://book.douban.com/subject/27621504/">
+                <img src="https://img3.doubanio.com/view/subject/m/public/s6828981.jpg">
+                </a>
+                <div class="bookIntro">
+                    <h2>
+                        <a calss="link" href="https://book.douban.com/subject/27621504/">这些人，那些事</a>
+                    </h2>
+                    <p class="bookRating">
+                        <!-- 评分 -->
+                        <el-rate
+                          v-model="value5"
+                          disabled  
+                          show-score
+                          text-color="#ff9900"
+                          score-template="8.8">
+                        </el-rate>
+                    </p>
+                    <p class="color-gray">
+                        吴念真 / 译林出版社 / 2011-9
+                    </p>
+                    <p class="bookDetail">
+                        吴念真累积多年、珍藏心底的体会与感动。 他写的每个故事，都蕴藏了我们无法预知的生命能量与心灵启发。 跟他一起回望人生种种，您将学会包容、豁达与感恩…… 本书...  </p>
+                </div>
             </li>
           </ul>
         </div>
@@ -40,11 +114,11 @@
           <ul>
             <li>
                 <a class="bookCover" href="https://book.douban.com/subject/27621504/">
-                <img src="https://img1.doubanio.com/view/subject/m/public/s29725069.jpg">
+                <img src="https://img3.doubanio.com/view/subject/m/public/s2280094.jpg">
                 </a>
                 <div class="bookIntro">
                     <h2>
-                        <a calss="link" href="https://book.douban.com/subject/27621504/">在美国钓鳟鱼</a>
+                        <a calss="link" href="https://book.douban.com/subject/27621504/">浮生六记</a>
                     </h2>
                     <p class="bookRating">
                         <!-- 评分 -->
@@ -53,25 +127,24 @@
                           disabled  
                           show-score
                           text-color="#ff9900"
-                          score-template="{value}">
+                          score-template="8.9">
                         </el-rate>
                     </p>
                     <p class="color-gray">
-                        [美] 理查德·布劳提根 / 广西师范大学出版社 / 2018-5
+                        （清）沈复 / 人民文学出版社 / 1999/1 
                     </p>
                     <p class="bookDetail">
-                        后垮掉派诗人理查德·布劳提根的小说代表作，一趟在时空之中、在虚构与现实之间穿梭跳跃的钓鳟鱼之旅，曾在美国畅销逾200万册。        
-                    </p>
+                        这是一部自传体文学的作品，原书六卷，已逸其二，现仅存四卷（有所谓“足本”者，后二记系伪作。书中记叙了作者夫妇间平凡的家居生活，坎坷际遇，和各地浪游闻见。文辞... </p>
                 </div>
             </li>
 
             <li>
                 <a class="bookCover" href="https://book.douban.com/subject/27621504/">
-                <img src="https://img1.doubanio.com/view/subject/m/public/s29725069.jpg">
+                <img src="https://img3.doubanio.com/view/subject/m/public/s29041051.jpg">
                 </a>
                 <div class="bookIntro">
                     <h2>
-                        <a calss="link" href="https://book.douban.com/subject/27621504/">在美国钓鳟鱼</a>
+                        <a calss="link" href="https://book.douban.com/subject/27621504/">撒哈拉的故事</a>
                     </h2>
                     <p class="bookRating">
                         <!-- 评分 -->
@@ -80,15 +153,40 @@
                           disabled  
                           show-score
                           text-color="#ff9900"
-                          score-template="{value}">
+                          score-template="9.0">
                         </el-rate>
                     </p>
                     <p class="color-gray">
-                        [美] 理查德·布劳提根 / 广西师范大学出版社 / 2018-5
+                        三毛 / 皇冠出版社 / 1976 
                     </p>
                     <p class="bookDetail">
-                        后垮掉派诗人理查德·布劳提根的小说代表作，一趟在时空之中、在虚构与现实之间穿梭跳跃的钓鳟鱼之旅，曾在美国畅销逾200万册。        
+                        三毛作品中最膾炙人口的《撒哈拉的故事》﹐ 由１２篇精采動人的散文結合而成﹐ 其中＜沙漠中的飯店＞﹐ 是三毛適應荒涼單調的沙漠生活後﹐ 重新拾筆的第一篇文字﹐...   </p>
+                </div>
+            </li>
+            <li>
+                <a class="bookCover" href="https://book.douban.com/subject/27621504/">
+                <img src="https://img3.doubanio.com/view/subject/m/public/s29446323.jpg">
+                </a>
+                <div class="bookIntro">
+                    <h2>
+                        <a calss="link" href="https://book.douban.com/subject/27621504/">时间的果</a>
+                    </h2>
+                    <p class="bookRating">
+                        <!-- 评分 -->
+                        <el-rate
+                          v-model="value5"
+                          max:10
+                          disabled  
+                          show-score
+                          text-color="#ff9900"
+                          score-template=" 8.3">
+                        </el-rate>
                     </p>
+                    <p class="color-gray">
+                        黎戈 / 北京联合出版公司 / 2017-3 
+                    </p>
+                    <p class="bookDetail">
+                        《时间的果》是作家黎戈的最新随笔精选集。本书分为“叶舟”和“根岸”两个部分，“叶舟”收录了作者的文学艺术评论：帕蒂斯密斯的致青春、永井荷风的慢走慢爱、爱因斯...  </p>
                 </div>
             </li>
           </ul>
@@ -109,7 +207,7 @@
         data () {
             return{
                 data:[],
-                value5: 3.7,
+                value5: 4.5,
                 favoriteLists:[]
             }
         },

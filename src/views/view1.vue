@@ -1,7 +1,8 @@
 <template>
     <div >
         <h1>我是View1</h1>
-        <a> 我是View1改动 </a>
+        <a @click="try1"> 尝试 </a>
+
     </div>
 </template>
 
@@ -11,13 +12,18 @@ import axios from 'axios'
 export default {
     name: 'view1',
     mounted: function() {
-        axios.post('/jhb/getslides')
-            .then(function (response) {
-                console.log(response);
+    },
+     methods:  {
+         try1() {
+            alert(1);
+            var params = new URLSearchParams();
+            params.append('param1', 'value1');
+            params.append('param2', 'value2');
+            this.$axios.post('http://localhost:8080/userTest/makeATry.do',params).then(res =>{
+            console.log(res);
+            alert(res.data.email)
             })
-            .catch(function (response) {
-                console.log(response);
-            });
+     }
     }
 }
 </script>
