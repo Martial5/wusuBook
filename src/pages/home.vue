@@ -13,7 +13,7 @@
 </template>
 
 <script>
-  import headerBar from '../components/header.vue'
+  import headerBar from '../components/headerBar.vue'
 
       export default {
         name: 'home2',

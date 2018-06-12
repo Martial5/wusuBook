@@ -5,194 +5,40 @@
         </div>
         
         <div>
-        <div class="article">
+        <div class="favoritearticle">
           <ul>
-            <!-- <li v-for="(favoriteList,index) in favoriteLists">
-                <a class="bookCover" href="https://book.douban.com/subject/27621504/">
-                <img src="https://img1.doubanio.com/view/subject/m/public/s29725069.jpg">
+            <li v-for="(favoriteList,index) in favoriteLists" class="favoritesmallBook">
+                <a class="favoritebookCover" href="https://book.douban.com/subject/27621504/">
+                <img v-bind:src="favoriteList.book_cover" class="favoriteimg">
                 </a>
-                <div class="bookIntro">
-                    <h2>
-                        <a calss="link" href="https://book.douban.com/subject/27621504/">{{favoriteList.bookName}}</a>
+                <div class="favoritebookIntro">
+                    <h2 class="favoriteH2">
+                        <a calss="link" href="https://book.douban.com/subject/27621504/">{{favoriteList.book_name}}</a>
                     </h2>
-                    <p class="bookRating">
+                    <p class="favoritebookRating">
                         <el-rate
-                          v-model="favoriteList.bookRating"
+                          v-model="favoriteList.book_score"
                           disabled  
                           show-score
                           text-color="#ff9900"
                           score-template="{value}">
                         </el-rate>
                     </p>
-                    <p class="color-gray">
-                        {{favoriteList.bookAuthor}} / {{favoriteList.bookPub}} / {{favoriteList.bookDate}}
+                    <p class="favoritecolor-gray">
+                        {{favoriteList.book_author}} / {{favoriteList.book_publishing}} / {{favoriteList.book_pub_time}}
                     </p>
-                    <p class="bookDetail">
-                        {{favoriteList.bookDetail}}        
+                    <p class="favoritebookDetail">
+                        {{favoriteList.book_info}}        
                     </p>
-                </div>
-            </li> -->
-            <li>
-                <a class="bookCover" href="https://book.douban.com/subject/27621504/">
-                <img src="https://img3.doubanio.com/view/subject/m/public/s1015872.jpg">
-                </a>
-                <div class="bookIntro">
-                    <h2>
-                        <a calss="link" href="https://book.douban.com/subject/27621504/">我们仨</a>
-                    </h2>
-                    <p class="bookRating">
-                        <!-- 评分 -->
-                        <el-rate
-                          v-model="value5"
-                          disabled  
-                          show-score
-                          text-color="#ff9900"
-                          score-template="8.7">
-                        </el-rate>
-                    </p>
-                    <p class="color-gray">
-                        杨绛 / 生活·读书·新知三联书店 / 2003-7 
-                    </p>
-                    <p class="bookDetail">
-                        《我们仨》是钱钟书夫人杨绛撰写的家庭生活回忆录。1998年，钱钟书逝世，而他和杨绛唯一的女儿钱瑗已于此前（1997年）先他们而去。在人生的伴侣离去四年后，杨...  </p>
                 </div>
             </li>
-            <li>
-                <a class="bookCover" href="https://book.douban.com/subject/27621504/">
-                <img src="https://img1.doubanio.com/view/subject/m/public/s3984108.jpg">
-                </a>
-                <div class="bookIntro">
-                    <h2>
-                        <a calss="link" href="https://book.douban.com/subject/27621504/">目送</a>
-                    </h2>
-                    <p class="bookRating">
-                        <!-- 评分 -->
-                        <el-rate
-                          v-model="value5"
-                          disabled  
-                          show-score
-                          text-color="#ff9900"
-                          score-template="8.7">
-                        </el-rate>
-                    </p>
-                    <p class="color-gray">
-                        龙应台 / 生活·读书·新知三联书店 / 2009-10 
-                    </p>
-                    <p class="bookDetail">
-                        目送共由七十四篇散文组成，是为一本极具亲情、感人至深的文集。由父亲的逝世、母亲的苍老、儿子的离开、朋友的牵挂、兄弟的携手共行，写出失败和脆弱、失落和放手，写... </p>
-                </div>
-            </li>
-            <li>
-                <a class="bookCover" href="https://book.douban.com/subject/27621504/">
-                <img src="https://img3.doubanio.com/view/subject/m/public/s6828981.jpg">
-                </a>
-                <div class="bookIntro">
-                    <h2>
-                        <a calss="link" href="https://book.douban.com/subject/27621504/">这些人，那些事</a>
-                    </h2>
-                    <p class="bookRating">
-                        <!-- 评分 -->
-                        <el-rate
-                          v-model="value5"
-                          disabled  
-                          show-score
-                          text-color="#ff9900"
-                          score-template="8.8">
-                        </el-rate>
-                    </p>
-                    <p class="color-gray">
-                        吴念真 / 译林出版社 / 2011-9
-                    </p>
-                    <p class="bookDetail">
-                        吴念真累积多年、珍藏心底的体会与感动。 他写的每个故事，都蕴藏了我们无法预知的生命能量与心灵启发。 跟他一起回望人生种种，您将学会包容、豁达与感恩…… 本书...  </p>
-                </div>
-            </li>
+           
           </ul>
         </div>
 
-        <div class="aside">
-          <ul>
-            <li>
-                <a class="bookCover" href="https://book.douban.com/subject/27621504/">
-                <img src="https://img3.doubanio.com/view/subject/m/public/s2280094.jpg">
-                </a>
-                <div class="bookIntro">
-                    <h2>
-                        <a calss="link" href="https://book.douban.com/subject/27621504/">浮生六记</a>
-                    </h2>
-                    <p class="bookRating">
-                        <!-- 评分 -->
-                        <el-rate
-                          v-model="value5"
-                          disabled  
-                          show-score
-                          text-color="#ff9900"
-                          score-template="8.9">
-                        </el-rate>
-                    </p>
-                    <p class="color-gray">
-                        （清）沈复 / 人民文学出版社 / 1999/1 
-                    </p>
-                    <p class="bookDetail">
-                        这是一部自传体文学的作品，原书六卷，已逸其二，现仅存四卷（有所谓“足本”者，后二记系伪作。书中记叙了作者夫妇间平凡的家居生活，坎坷际遇，和各地浪游闻见。文辞... </p>
-                </div>
-            </li>
-
-            <li>
-                <a class="bookCover" href="https://book.douban.com/subject/27621504/">
-                <img src="https://img3.doubanio.com/view/subject/m/public/s29041051.jpg">
-                </a>
-                <div class="bookIntro">
-                    <h2>
-                        <a calss="link" href="https://book.douban.com/subject/27621504/">撒哈拉的故事</a>
-                    </h2>
-                    <p class="bookRating">
-                        <!-- 评分 -->
-                        <el-rate
-                          v-model="value5"
-                          disabled  
-                          show-score
-                          text-color="#ff9900"
-                          score-template="9.0">
-                        </el-rate>
-                    </p>
-                    <p class="color-gray">
-                        三毛 / 皇冠出版社 / 1976 
-                    </p>
-                    <p class="bookDetail">
-                        三毛作品中最膾炙人口的《撒哈拉的故事》﹐ 由１２篇精采動人的散文結合而成﹐ 其中＜沙漠中的飯店＞﹐ 是三毛適應荒涼單調的沙漠生活後﹐ 重新拾筆的第一篇文字﹐...   </p>
-                </div>
-            </li>
-            <li>
-                <a class="bookCover" href="https://book.douban.com/subject/27621504/">
-                <img src="https://img3.doubanio.com/view/subject/m/public/s29446323.jpg">
-                </a>
-                <div class="bookIntro">
-                    <h2>
-                        <a calss="link" href="https://book.douban.com/subject/27621504/">时间的果</a>
-                    </h2>
-                    <p class="bookRating">
-                        <!-- 评分 -->
-                        <el-rate
-                          v-model="value5"
-                          max:10
-                          disabled  
-                          show-score
-                          text-color="#ff9900"
-                          score-template=" 8.3">
-                        </el-rate>
-                    </p>
-                    <p class="color-gray">
-                        黎戈 / 北京联合出版公司 / 2017-3 
-                    </p>
-                    <p class="bookDetail">
-                        《时间的果》是作家黎戈的最新随笔精选集。本书分为“叶舟”和“根岸”两个部分，“叶舟”收录了作者的文学艺术评论：帕蒂斯密斯的致青春、永井荷风的慢走慢爱、爱因斯...  </p>
-                </div>
-            </li>
-          </ul>
+        
         </div>
-        </div>
-        <div class="page">
+        <div class="favoritepage">
           <el-pagination
             background
             layout="prev, pager, next"
@@ -212,10 +58,13 @@
             }
         },
         mounted: function () {
-            this.$axios.get('https://www.easy-mock.com/mock/5b026b6a55348c1c9545d9ec/wusu/getMyBookList').then(res =>{
-                this.favoriteLists = res.data.booklist;
-                // console.log(res)
-            })
+            // this.$axios.get('https://www.easy-mock.com/mock/5b026b6a55348c1c9545d9ec/wusu/getMyBookList').then(res =>{
+            //     this.favoriteLists = res.data.booklist;
+            //     // console.log(res)
+            // })
+            this.$axios.get('http://localhost:8090/userFavorite/findUserFavorite.do').then(res =>{
+                this.favoriteLists = res.data.favoriteList;
+                })
         }
         // ,
         //   methods:  {
@@ -231,7 +80,14 @@
 </script>
 
 <style>
-    .favoriteContainer{
+  .favoritesmallBook{
+    width: 460px;
+    height: 160px;
+    float: left;
+    margin: 0 80px 20px 0;
+  }
+
+  .favoriteContainer{
       height: 890px;
 	  width:1030px;
       margin: 0 auto;
@@ -242,25 +98,25 @@
       float: left;
   }
 
-  li{
+  /* li.favoriteli{
     height: 145px;
     overflow: hidden;
     margin: 0 0 30px 0;
-  }
+  } */
 
-  .article{
-    width: 465px;
+  .favoritearticle{
+    width: 1200px;
     float: left;
     margin: 0 0 0 0px;
   }
 
-  .aside{
+  .favoriteaside{
     width: 465px;
     float: left;
     margin: 0 0 0 70px;
   }
 
-  .page{
+  .favoritepage{
 
     width:1000px;
     float: left;
@@ -268,7 +124,7 @@
     margin: 0 auto;
   }
 
-  h2{
+  h2.favoriteH2{
     display: block;
     font: 15px Arial, Helvetica, sans-serif;
     color: #37a;
@@ -276,43 +132,50 @@
     margin:0 0 0 0;
   }
 
-  a{
-    text-decoration: none;
-  }
 
-  a.bookCover{
+  a.favoritebookCover{
+    text-decoration: none;
     float: left;
     display: block;
     width: 100px;
   }
 
-  .bookIntro{
+  .favoritebookIntro{
     width: 340px;
     height: 132px;
     margin-left: 120px;
   }
 
-  .bookRating{
+  .favoritebookRating{
     /* width: 240px; */
     height: 13px;
     
   }
 
-  .color-gray{
+  .favoritecolor-gray{
     color: #666;
     font-size: 14px;
     margin:0 0 5px 0;
+    width: 350px;
+    height: 20px;
+    text-overflow: ellipsis;
+    white-space: nowrap; 
+    overflow: hidden;
   }
 
-  .bookDetail{
+  .favoritebookDetail{
     width: 340px;
-    height: 48px;
+    height: 56px;
     font-size: 14px;
     margin:0 0 0 0;
-
+    text-overflow: ellipsis;
+    display:-webkit-box; 
+    -webkit-box-orient:vertical;
+    -webkit-line-clamp:3; 
+    overflow: hidden;
   }
 
-  img{
+  img.favoriteimg{
     width: 100px;
     border-width: 0;
     vertical-align: middle;

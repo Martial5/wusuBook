@@ -1,5 +1,5 @@
 <template>
-  	<div id="header">
+  	<div id="headerBar">
           <div class="nav1">
             <el-menu
             :default-active="activeIndex2"
@@ -45,7 +45,7 @@
 
 <script type="text/javascript">
      export default {
-        name: 'header',
+        name: 'headerBar',
         data () {
             return{
                 activeIndex: '1',
@@ -80,20 +80,7 @@
             },
             serachBook(){
               var searchInput = this.input;
-              if(searchInput=='1'){
-              this.$axios.get('https://www.easy-mock.com/mock/5b026b6a55348c1c9545d9ec/wusu/search').then(res =>{
-                this.serachBooks = res.data.data.serachBook;
-                // console.log(res_book)
-              })
-              var getSearch = this.serachBook.bookName;
-              }
-              if(searchInput==getSearch){
-                this.$router.push({ path: '/bookList' });
-              }
-              else{
-                this.$router.push({ path: '/labels' });
-              }
-
+              this.$router.push({ path: '/showBook',query: {"book_name": searchInput} });
             }
           
           }

@@ -26,24 +26,21 @@
 </template>
 
 <script>
-  import { requestLogin } from '../api/api';
-  //import NProgress from 'nprogress'
   export default {
     data() {
       return {
         logining: false,
         ruleForm2: {
           account: 'admin',
-          checkPass: '123456'
+          checkPass: '123456',
         },
+        retrunUser:[],
         rules2: {
           account: [
             { required: true, message: '请输入账号', trigger: 'blur' },
-            //{ validator: validaePass }
           ],
           checkPass: [
             { required: true, message: '请输入密码', trigger: 'blur' },
-            //{ validator: validaePass2 }
           ]
         },
         checked: true
@@ -54,41 +51,20 @@
         var _this = this;
         this.$refs.ruleForm2.validate((valid) => {
           if (valid) {
-            //_this.$router.replace('/table');
             this.logining = true;
-            //NProgress.start();
-            var loginParams = { username: this.ruleForm2.account, password: this.ruleForm2.checkPass };
-            // this.$http.post('http://localhost/vueapi/index.php/Home/user/login',data).then((res)=>{
-            //   console.log(res)
-            if(loginParams.username=='admin'&&loginParams.password=='123456'){
-              this.$router.push({ path: '/bookList' });
-            }
-            else{
-                 this.$alert('信息有误', '出错', {
-                 confirmButtonText: '确定',
-                //  callback: action => {
-                //    this.$message({
-                //   type: 'info',
-                //   // message: `action: ${ action }`
-                //   });
-                // }
-               });
-            }
-
-            // requestLogin(loginParams).then(data => {
-            //   this.logining = false;
-            //   //NProgress.done();
-            //   let { msg, code, user } = data;
-            //   if (code !== 200) {
-            //     this.$message({
-            //       message: msg,
-            //       type: 'error'
-            //     });
-            //   } else {
-            //     sessionStorage.setItem('user', JSON.stringify(user));
-            //     this.$router.push({ path: '/home2' });
-            //   }
-            // });
+            var params = new URLSearchParams();
+            params.append('user_name',this.ruleForm2.account);
+            this.$axios.post('http://localhost:8090/user/userLogin.do',params).then(res =>{
+                this.retrunUser = res.data.thisUser;
+                if(res.data.thisUser.user_pass==this.ruleForm2.checkPass){
+                  this.$router.push({ path: '/bookList' });
+                }
+                else{
+                  this.$alert('信息有误', '出错', {
+                  confirmButtonText: '确定',
+                  });
+                }     
+              })
           } else {
             console.log('error submit!!');
             return false;

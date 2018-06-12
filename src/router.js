@@ -1,16 +1,14 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-
 import register from './pages/register.vue'
 import login from './pages/login.vue'
 import home from './pages/home.vue'
-import home2 from './pages/home2.vue'
 import bookList from './pages/bookList.vue'
+import showBook from './pages/showBook.vue'
 import favorite from './pages/favorite.vue'
 import labels from './pages/labels.vue'
 import profile from './pages/profile.vue'
 import book from './pages/book.vue'
-import book2 from './pages/book2.vue'
 import view1 from './views/view1.vue'
 
 Vue.use(Router)
@@ -39,7 +37,8 @@ export default new Router({
             { path: 'favorite', component: favorite },
             { path: 'labels', component: labels },
             { path: 'profile', component: profile },
-            { path: 'book', component: book }
+            { path: 'book', component: book },
+            {path:  'showBook',component: showBook}
         ]
     }
     // , {
@@ -58,10 +57,7 @@ export default new Router({
     //     path: '/home',
     //     component: home
     // }
-    , {
-        path: '/home2',
-        component: home2
-    }
+
     // , {
     //     path: '/labels',
     //     component: labels

@@ -42,149 +42,22 @@
         </div>
         <div class="history_bookList">
           <ul>
-            <!-- <li v-for="(historyList,index) in historyLists" class="pro_smallCover">
+            <li v-for="(historyList,index) in historyLists" class="pro_smallCover">
                 <div class="pro_cover">
                   <a href="https://book.douban.com/subject/27616947/?icn=index-latestbook-subject" title="刀锋之先">
-                  <img src="https://img3.doubanio.com/view/subject/m/public/s29744555.jpg" class="pro_midSize"  alt="刀锋之先">
+                  <img v-bind:src="historyList.book_cover" class="pro_midSize"  alt="刀锋之先">
                   </a>
                 </div>
                 <div class="pro_info">
                   <div class="pro_title">
-                    <a class="pro_titleFont" href="https://book.douban.com/subject/27616947/?icn=index-latestbook-subject" title="刀锋之先">{{historyList.bookName}}</a>
+                    <a class="pro_titleFont" href="https://book.douban.com/subject/27616947/?icn=index-latestbook-subject" title="刀锋之先">{{historyList.book_name}}</a>
                   </div>
                   <div class="pro_author">
-                    {{historyList.bookAuthor}}
-                  </div>
-                </div>
-            </li> -->
-            <li class="pro_smallCover">
-                <div class="pro_cover">
-                  <a href="https://book.douban.com/subject/27616947/?icn=index-latestbook-subject" title="刀锋之先">
-                  <img src="https://img3.doubanio.com/view/subject/l/public/s3078482.jpg" class="pro_midSize"  alt="刀锋之先">
-                  </a>
-                </div>
-                <div class="pro_info">
-                  <div class="pro_title">
-                    <a class="pro_titleFont" href="https://book.douban.com/subject/27616947/?icn=index-latestbook-subject" title="刀锋之先">三体Ⅱ
-</a>
-                  </div>
-                  <div class="pro_author">
-                    作者: 刘慈欣 
+                    {{historyList.book_author}}
                   </div>
                 </div>
             </li>
-            <li class="pro_smallCover">
-                <div class="pro_cover">
-                  <a href="https://book.douban.com/subject/27616947/?icn=index-latestbook-subject" title="刀锋之先">
-                  <img src="https://img3.doubanio.com/view/subject/l/public/s1076932.jpg" class="pro_midSize"  alt="刀锋之先">
-                  </a>
-                </div>
-                <div class="pro_info">
-                  <div class="pro_title">
-                    <a class="pro_titleFont" href="https://book.douban.com/subject/27616947/?icn=index-latestbook-subject" title="刀锋之先">三国演义（全二册）
-</a>
-                  </div>
-                  <div class="pro_author">
-                    作者: [明] 罗贯中  
-                  </div>
-                </div>
-            </li>
-            <li class="pro_smallCover">
-                <div class="pro_cover">
-                  <a href="https://book.douban.com/subject/27616947/?icn=index-latestbook-subject" title="刀锋之先">
-                  <img src="https://img3.doubanio.com/view/subject/l/public/s1229240.jpg" class="pro_midSize"  alt="刀锋之先">
-                  </a>
-                </div>
-                <div class="pro_info">
-                  <div class="pro_title">
-                    <a class="pro_titleFont" href="https://book.douban.com/subject/27616947/?icn=index-latestbook-subject" title="刀锋之先">福尔摩斯探案全集（上中下）
-</a>
-                  </div>
-                  <div class="pro_author">
-                    作者: [英] 阿·柯南道尔  
-                  </div>
-                </div>
-            </li>
-            <li class="pro_smallCover">
-                <div class="pro_cover">
-                  <a href="https://book.douban.com/subject/27616947/?icn=index-latestbook-subject" title="刀锋之先">
-                  <img src="https://img1.doubanio.com/view/subject/l/public/s29384019.jpg" class="pro_midSize"  alt="刀锋之先">
-                  </a>
-                </div>
-                <div class="pro_info">
-                  <div class="pro_title">
-                    <a class="pro_titleFont" href="https://book.douban.com/subject/27616947/?icn=index-latestbook-subject" title="刀锋之先">白夜行
-</a>
-                  </div>
-                  <div class="pro_author">
-                    作者: [日] 东野圭吾 
-                  </div>
-                </div>
-            </li>
-            <li class="pro_smallCover">
-                <div class="pro_cover">
-                  <a href="https://book.douban.com/subject/27616947/?icn=index-latestbook-subject" title="刀锋之先">
-                  <img src="https://img3.doubanio.com/view/subject/l/public/s6088624.jpg" class="pro_midSize"  alt="刀锋之先">
-                  </a>
-                </div>
-                <div class="pro_info">
-                  <div class="pro_title">
-                    <a class="pro_titleFont" href="https://book.douban.com/subject/27616947/?icn=index-latestbook-subject" title="刀锋之先">月亮和六便士
-</a>
-                  </div>
-                  <div class="pro_author">
-                    作者: [英] 毛姆 
-                  </div>
-                </div>
-            </li>
-            <li class="pro_smallCover">
-                <div class="pro_cover">
-                  <a href="https://book.douban.com/subject/27616947/?icn=index-latestbook-subject" title="刀锋之先">
-                  <img src="https://img3.doubanio.com/view/subject/l/public/s4434312.jpg" class="pro_midSize"  alt="刀锋之先">
-                  </a>
-                </div>
-                <div class="pro_info">
-                  <div class="pro_title">
-                    <a class="pro_titleFont" href="https://book.douban.com/subject/27616947/?icn=index-latestbook-subject" title="刀锋之先">子不语3
-</a>
-                  </div>
-                  <div class="pro_author">
-                    作者: [英] 毛姆 
-                  </div>
-                </div>
-            </li>
-            <li class="pro_smallCover">
-                <div class="pro_cover">
-                  <a href="https://book.douban.com/subject/27616947/?icn=index-latestbook-subject" title="刀锋之先">
-                  <img src="https://img3.doubanio.com/view/subject/l/public/s20742806.jpg" class="pro_midSize"  alt="刀锋之先">
-                  </a>
-                </div>
-                <div class="pro_info">
-                  <div class="pro_title">
-                    <a class="pro_titleFont" href="https://book.douban.com/subject/27616947/?icn=index-latestbook-subject" title="刀锋之先">滚蛋吧!肿瘤君
-</a>
-                  </div>
-                  <div class="pro_author">
-                    作者: [英] 毛姆 
-                  </div>
-                </div>
-            </li>
-            <li class="pro_smallCover">
-                <div class="pro_cover">
-                  <a href="https://book.douban.com/subject/27616947/?icn=index-latestbook-subject" title="刀锋之先">
-                  <img src="https://img1.doubanio.com/view/subject/l/public/s29399938.jpg" class="pro_midSize"  alt="刀锋之先">
-                  </a>
-                </div>
-                <div class="pro_info">
-                  <div class="pro_title">
-                    <a class="pro_titleFont" href="https://book.douban.com/subject/27616947/?icn=index-latestbook-subject" title="刀锋之先">明朝那些事儿
-</a>
-                  </div>
-                  <div class="pro_author">
-                    作者: [英] 毛姆 
-                  </div>
-                </div>
-            </li>
+            
           </ul>
         </div> 
       </div>
@@ -202,12 +75,11 @@
 
       <div class="bookTag">
       <ul>
-        <!-- <li class="li_tag" v-for="mytagList in mytagLists">
-          <el-tag>{{mytagList.tag1}}</el-tag>
-          <el-tag type="success">{{mytagList.tag2}}</el-tag>
-          <el-tag type="info">{{mytagList.tag3}}</el-tag>
-        </li> -->
-        <li class="li_tag" >
+        <li class="li_tag" v-for="mytagList in mytagLists">
+          <el-tag>{{mytagList.tag_name}}</el-tag>
+        </li>
+
+        <!-- <li class="li_tag" >
           <el-tag>小说</el-tag>
           <el-tag type="success">随笔</el-tag>
           <el-tag type="info">日本文学</el-tag>
@@ -221,7 +93,7 @@
           <el-tag>职场</el-tag>
           <el-tag type="success">旅行</el-tag>
           <el-tag type="info">传记</el-tag>
-        </li>
+        </li> -->
 
       </ul>
       </div>
@@ -250,13 +122,13 @@
 
         },
         mounted: function () {
-            this.$axios.get('https://www.easy-mock.com/mock/5b026b6a55348c1c9545d9ec/wusu/getMyBookList').then(res =>{
-                this.historyLists = res.data.booklist;
-                // console.log(res)
+          // 获得历史记录
+            this.$axios.get('http://localhost:8090/userHistory/findUserHistory.do').then(res =>{
+                this.historyLists = res.data.historyList;
             }),
-            this.$axios.get('https://www.easy-mock.com/mock/5b026b6a55348c1c9545d9ec/wusu/tagList').then(res =>{
-                this.mytagLists = res.data.data.tagList;
-                // console.log(res_book)
+
+            this.$axios.get('http://localhost:8090/userTag/getUserTag.do').then(res =>{
+                this.mytagLists = res.data.userTagList;
             })
         },
         components:{
@@ -447,7 +319,8 @@
   }
 
   .li_tag{
-    height: 100px;
+    height: 40px;
+    margin: 3px 2px 5px 5px;
   }
   
 </style>
